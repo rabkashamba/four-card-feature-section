@@ -25,14 +25,15 @@ body {
 }
 
 main {
-    width: clamp(25vw, 23.4375rem, 90rem);
+    width: clamp(18.75rem, 23.4375rem, 40rem);
     margin: calc(1rem + 5vh) auto;
+    padding: calc(1rem + 1%);
 }
 
 
 
 .heading {
-    padding: calc(1rem + 1%);
+    text-align: center;
 }
 
 
@@ -55,9 +56,9 @@ h2 {
 
 .card {
     margin: calc(1.5rem  + 1vh) auto;
-    width: calc(100% - 6rem);
-    border-radius: 0.5rem;
-    box-shadow: 0.01rem 0.6rem 1rem var(--shadow);
+    width: calc(100% - 3rem);
+    border-radius: 0.38rem;
+    box-shadow: 0rem 0.8rem 1rem var(--shadow);
     padding: calc(1rem + 1%);
     position: relative;
 }
@@ -65,7 +66,7 @@ h2 {
 
 .card img {
     position: absolute;
-    bottom: calc(1rem + 3%);
+    bottom: calc(1rem + 5%);
     right: calc(1rem + 3%);
 }
 
@@ -91,4 +92,55 @@ h2 {
 }
 
 
+/* Desktop Design Starts Here  */
+
+  @media screen and (min-width: 40rem) {
+    main {
+        width: clamp(40rem, 64rem, 90rem);
+        display: grid;
+        grid-template-columns: 1fr minmax(12.5rem, 31.25rem) 1fr;
+        grid-template-areas: 
+        ". heading ."
+        "cards cards cards"
+        ;
+        padding-top: 0;
+    }
+
+    .heading {
+        grid-area: heading;
+        margin-bottom: calc(1.5rem  + 1vh);
+    }
+
+    .feature-cards {
+        grid-area: cards;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        ". cardtwo ."
+        "cardone cardtwo cardfour" 
+        "cardone cardthree cardfour"
+        ". cardthree ."
+        ;
+    }
+
+    .card {
+        margin-top: 0;
+    }
+
+    .feature-cards div:first-of-type {
+        grid-area: cardone;
+    }
+    
+    .feature-cards div:nth-of-type(2) {
+        grid-area:cardtwo;
+    }
+    
+    .feature-cards div:nth-of-type(3) {
+        grid-area: cardthree;
+    }
+    
+    .feature-cards div:last-of-type {
+        grid-area: cardfour;
+    }
+} 
 
