@@ -25,7 +25,7 @@ body {
 }
 
 main {
-    width: clamp(18.75rem, 23.4375rem, 40rem);
+    width: clamp(20rem, 90%, 23.4375rem);
     margin: calc(1rem + 5vh) auto;
     padding: calc(1rem + 1%);
 }
@@ -37,14 +37,19 @@ main {
 }
 
 
-h1 {
-    font-weight: 200;
+.heading p:first-of-type {
+    font-weight: 600;
+    font-size: 2em;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
-h1 span {
-    font-weight: 600;
+h1 {
+    font-weight: 200;
+    margin-bottom: 0;
+    
 }
+
 
 h1, h2 {
     color: var(--Grey-500);
